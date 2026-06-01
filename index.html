@@ -4,14 +4,14 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UBI Ethical Hacking Track | Calm Ay</title>
-  <meta name="description" content="UBI Internship Ethical Hacking Track — Stage 0 Capstone by Rasaq Ayomide (Calm Ay). Sankofa Digital SOC incident analysis, dismissal pattern, business impact, and ethics judgment."/>
+  <meta name="description" content="UBI Internship Ethical Hacking Track — multi-stage programme by Rasaq Ayomide (Calm Ay). SOC analysis, incident response, penetration testing, and security ethics."/>
   <meta property="og:title" content="UBI Ethical Hacking Track | Calm Ay"/>
-  <meta property="og:description" content="Stage 0 Capstone — Sankofa Digital SOC incident analysis. Threat actor identified, dismissal pattern mapped, 4-document report delivered."/>
+  <meta property="og:description" content="Multi-stage ethical hacking internship — real scenarios, real deliverables, real citations."/>
   <meta property="og:url" content="https://calm-ay.github.io/ubi-internship-ethical-hacking/"/>
   <meta property="og:image" content="https://calm-ay.github.io/photo.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="UBI Ethical Hacking Track | Calm Ay"/>
-  <meta name="twitter:description" content="Stage 0 Capstone — Sankofa Digital SOC incident analysis. Threat actor identified, dismissal pattern mapped, 4-document report delivered."/>
+  <meta name="twitter:description" content="Multi-stage ethical hacking internship — real scenarios, real deliverables, real citations."/>
   <meta name="twitter:image" content="https://calm-ay.github.io/photo.jpg"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23e62020' d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/></svg>"/>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -37,37 +37,58 @@
     .heading .w{color:var(--white);display:block;}
     .heading .r{color:var(--red);display:block;}
 
+    /* HERO */
     .hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;}
     .hero-divider{width:50px;height:3px;background:var(--red);margin:22px 0;}
     .hero-sub{color:var(--gray);font-size:0.92rem;line-height:1.75;max-width:580px;margin-top:8px;}
     .btn-r{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:13px 30px;border-radius:3px;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-decoration:none;transition:opacity 0.2s;margin-top:28px;}
     .btn-r:hover{opacity:0.82;}
 
+    /* STAGE INDEX CARDS */
     .section{padding:80px 0;}
+    .stage-card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:28px 30px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:16px;transition:border-color 0.2s;}
+    .stage-card:hover{border-color:#333;}
+    .stage-card::before,.stage-card::after{content:'';position:absolute;width:14px;height:14px;}
+    .stage-card::before{top:-1px;left:-1px;border-top:2px solid var(--red);border-left:2px solid var(--red);}
+    .stage-card::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--red);border-right:2px solid var(--red);}
+    .stage-card.locked{opacity:0.4;pointer-events:none;}
+    .stage-card.locked::before{border-color:#333;}
+    .stage-card.locked::after{border-color:#333;}
+    .stage-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#1a1a1a;line-height:1;flex-shrink:0;width:60px;}
+    .stage-body{flex:1;}
+    .stage-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+    .tag{font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;border:1px solid #2a2a2a;color:var(--gray);padding:2px 8px;border-radius:2px;font-weight:600;}
+    .tag.done{border-color:#1a3a1a;color:#44cc44;}
+    .tag.soon{border-color:#2a1a00;color:#888;}
+    .stage-title{font-weight:700;font-size:1.05rem;margin-bottom:6px;}
+    .stage-desc{font-size:0.8rem;color:var(--gray);line-height:1.65;max-width:600px;}
+    .stage-actions{display:flex;flex-direction:column;gap:10px;flex-shrink:0;align-items:flex-end;}
+    .btn-view{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;padding:10px 20px;border-radius:3px;font-weight:700;font-size:0.72rem;letter-spacing:2px;text-decoration:none;transition:opacity 0.2s;white-space:nowrap;}
+    .btn-view:hover{opacity:0.82;}
+    .btn-locked{display:inline-flex;align-items:center;gap:6px;background:#111;color:#333;padding:10px 20px;border-radius:3px;font-weight:700;font-size:0.72rem;letter-spacing:2px;white-space:nowrap;border:1px solid #222;cursor:not-allowed;}
+    .stage-date{font-size:0.65rem;letter-spacing:1px;color:#444;text-align:right;}
+
+    /* STAGE DETAIL SECTION */
+    .stage-detail{border-top:1px solid var(--border);padding:80px 0;}
+    .stage-detail-header{display:flex;align-items:center;gap:20px;margin-bottom:50px;}
+    .stage-badge{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;color:var(--red);border:1px solid var(--red);padding:6px 16px;border-radius:3px;}
 
     /* DELIVERABLE CARDS */
-    .doc-card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:28px 30px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:16px;transition:border-color 0.2s;}
-    .doc-card:hover{border-color:#333;}
-    .doc-card::before,.doc-card::after{content:'';position:absolute;width:14px;height:14px;}
-    .doc-card::before{top:-1px;left:-1px;border-top:2px solid var(--red);border-left:2px solid var(--red);}
-    .doc-card::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--red);border-right:2px solid var(--red);}
-    .doc-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#1a1a1a;line-height:1;flex-shrink:0;width:50px;}
+    .doc-card{background:#080808;border:1px solid var(--border);border-radius:3px;padding:24px 28px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:12px;transition:border-color 0.2s;}
+    .doc-card:hover{border-color:#2a2a2a;}
+    .doc-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:#222;line-height:1;flex-shrink:0;width:40px;}
     .doc-body{flex:1;}
-    .doc-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-    .tag{font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;border:1px solid #2a2a2a;color:var(--gray);padding:2px 8px;border-radius:2px;font-weight:600;}
-    .doc-title{font-weight:700;font-size:1.05rem;margin-bottom:6px;}
-    .doc-desc{font-size:0.8rem;color:var(--gray);line-height:1.65;max-width:600px;}
-    .doc-actions{display:flex;flex-direction:column;gap:10px;flex-shrink:0;align-items:flex-end;}
-    .btn-dl{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;padding:10px 20px;border-radius:3px;font-weight:700;font-size:0.72rem;letter-spacing:2px;text-decoration:none;transition:opacity 0.2s;white-space:nowrap;}
-    .btn-dl:hover{opacity:0.82;}
-    .doc-pages{font-size:0.65rem;letter-spacing:1px;color:#444;text-align:right;}
+    .doc-title{font-weight:700;font-size:0.95rem;margin-bottom:5px;}
+    .doc-desc{font-size:0.78rem;color:var(--gray);line-height:1.6;max-width:560px;}
+    .doc-dl{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;padding:8px 16px;border-radius:3px;font-weight:700;font-size:0.68rem;letter-spacing:2px;text-decoration:none;transition:opacity 0.2s;white-space:nowrap;flex-shrink:0;}
+    .doc-dl:hover{opacity:0.82;}
 
-    /* FINDINGS */
-    .finding-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px;}
-    .finding-card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:24px;}
-    .finding-label{font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px;}
-    .finding-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;margin-bottom:6px;}
-    .finding-desc{font-size:0.78rem;color:var(--gray);line-height:1.65;}
+    /* FINDING GRID */
+    .finding-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px;margin-bottom:50px;}
+    .finding-card{background:#080808;border:1px solid var(--border);border-radius:3px;padding:20px;}
+    .finding-label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px;}
+    .finding-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.3rem;margin-bottom:5px;}
+    .finding-desc{font-size:0.75rem;color:var(--gray);line-height:1.6;}
 
     /* STATS */
     .stats{display:flex;gap:60px;border-top:1px solid var(--border);padding-top:40px;margin-top:40px;flex-wrap:wrap;}
@@ -83,8 +104,9 @@
       nav{padding:12px 24px;flex-wrap:wrap;gap:8px;}
       .wrap{padding:0 24px;}
       .hero{padding-top:100px;}
+      .stage-card{flex-direction:column;}
+      .stage-actions{align-items:flex-start;}
       .doc-card{flex-direction:column;}
-      .doc-actions{align-items:flex-start;}
       .finding-grid{grid-template-columns:1fr;}
       .stats{gap:30px;}
     }
@@ -97,139 +119,168 @@
   <a class="nav-back" href="https://calm-ay.github.io">← Back to Portfolio</a>
 </nav>
 
+<!-- HERO -->
 <div class="wrap">
   <section class="hero">
     <div>
-      <div class="label">UBI INTERNSHIP · ETHICAL HACKING TRACK</div>
+      <div class="label">UBI COHORT 1.0 · ETHICAL HACKING TRACK</div>
       <div class="heading">
-        <span class="w">Stage 0</span>
-        <span class="r">Capstone Report</span>
+        <span class="w">Internship</span>
+        <span class="r">Programme</span>
       </div>
       <div class="hero-divider"></div>
-      <p class="hero-sub">Sankofa Digital SOC incident analysis — identifying a threat actor, mapping a 9-alert dismissal pattern, and delivering a 4-document report to an Incident Committee. Every finding tied to evidence. Every claim cited.</p>
-      <a href="#deliverables" class="btn-r">VIEW DELIVERABLES ↓</a>
+      <p class="hero-sub">A multi-stage ethical hacking internship — real scenarios, real deliverables, real citations. Each stage builds on the last: from SOC foundations and incident analysis through to advanced offensive techniques. Every report written for a non-technical decision-maker. Every claim tied to evidence.</p>
+      <a href="#stages" class="btn-r">VIEW STAGES ↓</a>
     </div>
   </section>
 </div>
 
+<!-- STAGE INDEX -->
 <div class="wrap">
-  <section class="section" style="padding-top:0;">
-    <div class="label">SCENARIO</div>
-    <div class="heading"><span class="w">The</span><span class="r">Situation</span></div>
-    <p style="color:var(--gray);font-size:0.9rem;line-height:1.8;max-width:680px;margin-top:20px;">Sankofa Digital is a 600-person fintech with a 4-person SOC. A Tier-1 analyst flagged a login from an unusual IP, wrote "probably nothing" in the ticket, and closed it. The Head of Security, Amaka Eze, disagreed. This is the report delivered to the Sankofa Digital Incident Committee — three non-technical executives who needed the full picture in under 15 minutes.</p>
-
-    <div class="finding-grid">
-      <div class="finding-card">
-        <div class="finding-label">Threat Actor</div>
-        <div class="finding-val">The Griot</div>
-        <div class="finding-desc">Named from decoded Base64 payload in the evidence pack: <em>"The Griot is already inside the walls."</em></div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">Entry Point</div>
-        <div class="finding-val">185.220.101.9</div>
-        <div class="finding-desc">External IP used to authenticate as o.adegoke — while he was on annual leave Jun 3–7.</div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">Dismissal Pattern</div>
-        <div class="finding-val">9 Alerts Closed</div>
-        <div class="finding-desc">All 9 automated alerts closed without peer review. 11 of 16 Q2 tickets closed by a single analyst — the same account that was flagged.</div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">Post-Offboarding Account</div>
-        <div class="finding-val">a.eze Active</div>
-        <div class="finding-desc">Account offboarded Apr 12 still appearing in auth logs Jun 3–5. Account was never purged from the system.</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<div class="wrap">
-  <section id="deliverables" class="section">
-    <div class="label">DELIVERABLES</div>
-    <div class="heading"><span class="w">Four</span><span class="r">Documents</span></div>
+  <section id="stages" class="section">
+    <div class="label">STAGES</div>
+    <div class="heading"><span class="w">Track</span><span class="r">Progress</span></div>
 
     <div style="margin-top:50px;">
 
-      <div class="doc-card">
-        <div class="doc-num">D1</div>
-        <div class="doc-body">
-          <div class="doc-tags">
-            <span class="tag">EVIDENCE TABLE</span>
-            <span class="tag">LOG ANALYSIS</span>
-            <span class="tag">THREAT INTEL</span>
-          </div>
-          <div class="doc-title">Suspicious Login Evidence Table</div>
-          <div class="doc-desc">10-row evidence table mapping every suspicious event to file, timestamp, source IP, and confidence rating (H/M/L). Covers the initial login, repeat session, post-offboarding account activity, decoded threat actor name, and investigative next steps. Each row cites ≥2 evidence sources.</div>
-        </div>
-        <div class="doc-actions">
-          <a href="./D1_Suspicious_Login_Evidence_Table.docx" class="btn-dl">↓ DOWNLOAD</a>
-          <div class="doc-pages">3–5 pages</div>
-        </div>
-      </div>
-
-      <div class="doc-card">
-        <div class="doc-num">D2</div>
-        <div class="doc-body">
-          <div class="doc-tags">
-            <span class="tag">DISMISSAL PATTERN</span>
+      <!-- STAGE 0 — COMPLETE -->
+      <div class="stage-card">
+        <div class="stage-num">00</div>
+        <div class="stage-body">
+          <div class="stage-tags">
+            <span class="tag done">✓ COMPLETE</span>
+            <span class="tag">FOUNDATIONS</span>
             <span class="tag">SOC ANALYSIS</span>
-            <span class="tag">ROOT CAUSE</span>
-          </div>
-          <div class="doc-title">Tier-1 Dismissal Pattern Analysis</div>
-          <div class="doc-desc">Full analysis of how 9 alerts were closed across SD-40812 through SD-40866. Per-ticket breakdown showing what the SIEM raised, what was missed, and what it cost. Root cause: o.adegoke closed 11 of 16 tickets (69%) — including tickets about his own account. Dual-signature policy recommended.</div>
-        </div>
-        <div class="doc-actions">
-          <a href="./D2_Tier1_Dismissal_Pattern.docx" class="btn-dl">↓ DOWNLOAD</a>
-          <div class="doc-pages">3–5 pages</div>
-        </div>
-      </div>
-
-      <div class="doc-card">
-        <div class="doc-num">D3</div>
-        <div class="doc-body">
-          <div class="doc-tags">
-            <span class="tag">BUSINESS IMPACT</span>
-            <span class="tag">MITRE ATT&amp;CK</span>
-            <span class="tag">NDPA</span>
-            <span class="tag">ACTION PLAN</span>
-          </div>
-          <div class="doc-title">Business Impact &amp; Next Steps</div>
-          <div class="doc-desc">Headline finding written for board-level readers. Attacker profile with MITRE ATT&amp;CK technique mapping and NDPA compliance obligations. Three 72-hour action boxes with owner, deadline, evidence, and risk-if-not-closed. Full evidence appendix covering every file, line, ticket, and external standard cited.</div>
-        </div>
-        <div class="doc-actions">
-          <a href="./D3_Business_Impact_Next_Steps.docx" class="btn-dl">↓ DOWNLOAD</a>
-          <div class="doc-pages">3–5 pages</div>
-        </div>
-      </div>
-
-      <div class="doc-card">
-        <div class="doc-num">D4</div>
-        <div class="doc-body">
-          <div class="doc-tags">
+            <span class="tag">INCIDENT RESPONSE</span>
             <span class="tag">ETHICS</span>
-            <span class="tag">ISC2 CODE OF ETHICS</span>
-            <span class="tag">SIEM SCENARIO</span>
           </div>
-          <div class="doc-title">Judgment Essay</div>
-          <div class="doc-desc">Part A: ethics call under ISC2 Code of Ethics Canon I (Protect Society) and Canon II (Act Honorably) — exact escalation order with justification. Part B: open-ended SIEM alert scenario mirroring the June breach pattern, referencing D1 rows directly, with a handover note draft.</div>
+          <div class="stage-title">Stage 0 — Foundations: Induction at the Gate</div>
+          <div class="stage-desc">Sankofa Digital SOC breach scenario. Identified threat actor "The Griot" via decoded payloads, mapped a 9-alert dismissal pattern, cross-referenced a staff roster to confirm insider-assisted access, and delivered a 4-document report to a simulated Incident Committee. 10 desk tasks covering shell, hashing, encoding, log triage, and ethics.</div>
         </div>
-        <div class="doc-actions">
-          <a href="./D4_Judgment_Essay.docx" class="btn-dl">↓ DOWNLOAD</a>
-          <div class="doc-pages">2 pages</div>
+        <div class="stage-actions">
+          <a href="#stage-0" class="btn-view">VIEW STAGE ↓</a>
+          <div class="stage-date">Submitted Jun 1, 2026</div>
+        </div>
+      </div>
+
+      <!-- STAGE 1 — LOCKED -->
+      <div class="stage-card locked">
+        <div class="stage-num">01</div>
+        <div class="stage-body">
+          <div class="stage-tags">
+            <span class="tag soon">COMING SOON</span>
+          </div>
+          <div class="stage-title">Stage 1 — In Progress</div>
+          <div class="stage-desc">Details will be published when this stage is submitted and cleared for release.</div>
+        </div>
+        <div class="stage-actions">
+          <div class="btn-locked">LOCKED</div>
+        </div>
+      </div>
+
+      <!-- STAGE 2 — LOCKED -->
+      <div class="stage-card locked">
+        <div class="stage-num">02</div>
+        <div class="stage-body">
+          <div class="stage-tags">
+            <span class="tag soon">COMING SOON</span>
+          </div>
+          <div class="stage-title">Stage 2 — Not Yet Started</div>
+          <div class="stage-desc">Details will be published when this stage is submitted and cleared for release.</div>
+        </div>
+        <div class="stage-actions">
+          <div class="btn-locked">LOCKED</div>
         </div>
       </div>
 
     </div>
 
     <div class="stats">
+      <div><div class="stat-num">1</div><div class="stat-lbl">Stages Completed</div></div>
       <div><div class="stat-num">4</div><div class="stat-lbl">Documents Delivered</div></div>
       <div><div class="stat-num">9</div><div class="stat-lbl">Alerts Mapped</div></div>
-      <div><div class="stat-num">4</div><div class="stat-lbl">Payloads Decoded</div></div>
-      <div><div class="stat-num">10</div><div class="stat-lbl">Desk Tasks Completed</div></div>
+      <div><div class="stat-num">10</div><div class="stat-lbl">Desk Tasks Done</div></div>
     </div>
   </section>
 </div>
 
+<!-- STAGE 0 DETAIL -->
+<div class="wrap">
+  <section id="stage-0" class="stage-detail">
+    <div class="stage-detail-header">
+      <div class="stage-badge">STAGE 0</div>
+      <div>
+        <div style="font-weight:700;font-size:1.1rem;">Foundations — Induction at the Gate</div>
+        <div style="font-size:0.78rem;color:var(--gray);margin-top:3px;">Sankofa Digital · SOC Incident Analysis · Submitted Jun 1, 2026</div>
+      </div>
+    </div>
+
+    <div class="label">KEY FINDINGS</div>
+    <div class="finding-grid">
+      <div class="finding-card">
+        <div class="finding-label">Threat Actor</div>
+        <div class="finding-val">The Griot</div>
+        <div class="finding-desc">Named from decoded Base64 payload: <em>"The Griot is already inside the walls."</em></div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-label">Entry Point</div>
+        <div class="finding-val">185.220.101.9</div>
+        <div class="finding-desc">External IP used to authenticate as o.adegoke while he was on annual leave Jun 3–7.</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-label">Dismissal Pattern</div>
+        <div class="finding-val">9 Alerts Closed</div>
+        <div class="finding-desc">11 of 16 Q2 tickets closed by a single analyst — the same account that was flagged — with no peer review.</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-label">Post-Offboarding Account</div>
+        <div class="finding-val">a.eze Still Active</div>
+        <div class="finding-desc">Account offboarded Apr 12 still appearing in auth logs Jun 3–5. Never purged.</div>
+      </div>
+    </div>
+
+    <div class="label">DELIVERABLES</div>
+
+    <div class="doc-card">
+      <div class="doc-num">D1</div>
+      <div class="doc-body">
+        <div class="doc-title">Suspicious Login Evidence Table</div>
+        <div class="doc-desc">10-row evidence table mapping every suspicious event to file, timestamp, source IP, and confidence rating. Each row cites ≥2 evidence sources. Covers initial login, repeat session, post-offboarding activity, and decoded threat actor name.</div>
+      </div>
+      <a href="./D1_Suspicious_Login_Evidence_Table.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-num">D2</div>
+      <div class="doc-body">
+        <div class="doc-title">Tier-1 Dismissal Pattern Analysis</div>
+        <div class="doc-desc">Full analysis of how 9 alerts were closed across SD-40812 through SD-40866. Per-ticket breakdown of what was raised, what was missed, and the conflict of interest. Dual-signature policy recommended.</div>
+      </div>
+      <a href="./D2_Tier1_Dismissal_Pattern.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-num">D3</div>
+      <div class="doc-body">
+        <div class="doc-title">Business Impact &amp; Next Steps</div>
+        <div class="doc-desc">Board-level headline finding, attacker profile with MITRE ATT&amp;CK mapping, NDPA obligations, and three 72-hour action boxes with owners and deadlines. Full evidence appendix included.</div>
+      </div>
+      <a href="./D3_Business_Impact_Next_Steps.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-num">D4</div>
+      <div class="doc-body">
+        <div class="doc-title">Judgment Essay</div>
+        <div class="doc-desc">Ethics call under ISC2 Code of Ethics Canon I (Protect Society) and Canon II (Act Honorably), with exact escalation order. Open-ended SIEM alert scenario referencing D1 rows directly, including a handover note draft.</div>
+      </div>
+      <a href="./D4_Judgment_Essay.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+  </section>
+</div>
+
+<!-- FOOTER -->
 <div class="wrap">
   <footer class="footer">
     <div class="label">AUTHOR</div>
