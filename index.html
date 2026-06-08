@@ -163,18 +163,23 @@
         </div>
       </div>
 
-      <!-- STAGE 1 — LOCKED -->
-      <div class="stage-card locked">
+      <!-- STAGE 1 — COMPLETE -->
+      <div class="stage-card">
         <div class="stage-num">01</div>
         <div class="stage-body">
           <div class="stage-tags">
-            <span class="tag soon">COMING SOON</span>
+            <span class="tag done">✓ COMPLETE</span>
+            <span class="tag">APPLIED CRYPTOGRAPHY</span>
+            <span class="tag">JWT AUDITING</span>
+            <span class="tag">CIPHER ANALYSIS</span>
+            <span class="tag">CONTROLS DESIGN</span>
           </div>
-          <div class="stage-title">Stage 1 — In Progress</div>
-          <div class="stage-desc">Details will be published when this stage is submitted and cleared for release.</div>
+          <div class="stage-title">Stage 1 — Applied Cryptography: Ciphers &amp; Secrets</div>
+          <div class="stage-desc">Cryptographic audit of a staging-server drop left behind by "The Griot". Decrypted an AES-CBC ciphertext, identified and broke a classical cipher, audited three session JWTs for signature/lifecycle/privilege flaws, peeled a three-layer encoded reconnaissance memo, and delivered a 6-document post-mortem and controls package to a simulated security board.</div>
         </div>
         <div class="stage-actions">
-          <div class="btn-locked">LOCKED</div>
+          <a href="#stage-1" class="btn-view">VIEW STAGE ↓</a>
+          <div class="stage-date">Submitted Jun 8, 2026</div>
         </div>
       </div>
 
@@ -226,10 +231,10 @@
     </div>
 
     <div class="stats">
-      <div><div class="stat-num">1</div><div class="stat-lbl">Stages Completed</div></div>
-      <div><div class="stat-num">4</div><div class="stat-lbl">Documents Delivered</div></div>
+      <div><div class="stat-num">2</div><div class="stat-lbl">Stages Completed</div></div>
+      <div><div class="stat-num">10</div><div class="stat-lbl">Documents Delivered</div></div>
       <div><div class="stat-num">9</div><div class="stat-lbl">Alerts Mapped</div></div>
-      <div><div class="stat-num">10</div><div class="stat-lbl">Desk Tasks Done</div></div>
+      <div><div class="stat-num">16</div><div class="stat-lbl">Desk Tasks Done</div></div>
     </div>
   </section>
 </div>
@@ -305,6 +310,100 @@
         <div class="doc-desc">Ethics call under ISC2 Code of Ethics Canon I (Protect Society) and Canon II (Act Honorably), with exact escalation order. Open-ended SIEM alert scenario referencing D1 rows directly, including a handover note draft.</div>
       </div>
       <a href="./D4_Judgment_Essay.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+  </section>
+</div>
+
+<!-- STAGE 1 DETAIL -->
+<div class="wrap">
+  <section id="stage-1" class="stage-detail">
+    <div class="stage-detail-header">
+      <div class="stage-badge">STAGE 1</div>
+      <div>
+        <div style="font-weight:700;font-size:1.1rem;">Applied Cryptography — Ciphers &amp; Secrets</div>
+        <div style="font-size:0.78rem;color:var(--gray);margin-top:3px;">Sankofa Digital · Cryptographic Audit &amp; Controls Review · Submitted Jun 8, 2026</div>
+      </div>
+    </div>
+
+    <div class="label">KEY FINDINGS</div>
+    <div class="finding-grid">
+      <div class="finding-card">
+        <div class="finding-label">AES-CBC Ciphertext</div>
+        <div class="finding-val">Decrypted Target Name</div>
+        <div class="finding-desc">Key and IV left in the same staging config as the ciphertext — recovered the plaintext naming the attacker's intended target.</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-label">Classical Cipher</div>
+        <div class="finding-val">ROT13 — "The Griot Is Already Inside"</div>
+        <div class="finding-desc">Identified by alphabet-only structure and word-pattern frequency; decoded note shows the actor was aware of Tunde's investigation.</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-label">JWT Audit</div>
+        <div class="finding-val">3 for 3 — All Tokens Flawed</div>
+        <div class="finding-desc">alg:none signature bypass, missing-exp indefinite sessions, and a privileged admin claim issued for an offboarded account.</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-label">Three-Layer Recon Memo</div>
+        <div class="finding-val">Next Targets Named</div>
+        <div class="finding-desc">Base64 → ROT13 → Atbash peel revealed a staged reconnaissance plan against three internal systems, including a legacy app that should have been decommissioned in 2024.</div>
+      </div>
+    </div>
+
+    <div class="label">DELIVERABLES</div>
+
+    <div class="doc-card">
+      <div class="doc-num">01</div>
+      <div class="doc-body">
+        <div class="doc-title">Decryption Walkthrough</div>
+        <div class="doc-desc">AES-CBC ciphertext, key/IV, CyberChef recipe, recovered plaintext, and a two-sentence note on why ECB mode would have leaked structure that CBC did not.</div>
+      </div>
+      <a href="./S1_Decryption_Walkthrough.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-num">02</div>
+      <div class="doc-body">
+        <div class="doc-title">Classical Cipher Analysis</div>
+        <div class="doc-desc">Cipher identification reasoning (frequency analysis + structural cues), the decoded plaintext, and what its timing reveals about the actor's awareness of the investigation.</div>
+      </div>
+      <a href="./S1_Classical_Cipher.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-num">03</div>
+      <div class="doc-body">
+        <div class="doc-title">JWT Audit</div>
+        <div class="doc-desc">Per-token breakdown of header, payload, and signature for three session tokens — one red flag per token, mapped to RFC 7519 and NIST SP 800-53.</div>
+      </div>
+      <a href="./S1_JWT_Audit.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-num">04</div>
+      <div class="doc-body">
+        <div class="doc-title">Hash vs. Encryption Memo</div>
+        <div class="doc-desc">300-word brief for a non-technical manager on when to hash and when to encrypt, illustrated with the attacker's own cryptographic mistakes.</div>
+      </div>
+      <a href="./S1_Hash_vs_Encryption.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-num">05</div>
+      <div class="doc-body">
+        <div class="doc-title">Cryptographic Controls Proposal</div>
+        <div class="doc-desc">Five concrete controls for a small team on a tight budget — each mapped to at least two observed failures, with one-line justifications, rough costs, and rollout order.</div>
+      </div>
+      <a href="./S1_Cryptographic_Controls.docx" class="doc-dl">↓ DOWNLOAD</a>
+    </div>
+
+    <div class="doc-card">
+      <div class="doc-num">06</div>
+      <div class="doc-body">
+        <div class="doc-title">Three-Layer Encoding Analysis</div>
+        <div class="doc-desc">Full peel of the Base64 → ROT13 → Atbash reconnaissance memo with every intermediate output shown, plus a MITRE ATT&amp;CK mapping of the planned next-phase targets.</div>
+      </div>
+      <a href="./S1_Three_Layer_Encoding.docx" class="doc-dl">↓ DOWNLOAD</a>
     </div>
 
   </section>

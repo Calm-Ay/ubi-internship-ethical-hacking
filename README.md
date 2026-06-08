@@ -1,8 +1,8 @@
-# UBI Internship — Ethical Hacking Track · Stage 0 Capstone
+# UBI Internship — Ethical Hacking Track · Capstone Reports
 
 **Author:** Rasaq Ayomide (Calm Ay)
 **Programme:** UBI Internship — Ethical Hacking Track
-**Stage:** Stage 0 — Foundations: Induction at the Gate
+**Stages covered:** Stage 0 — Foundations: Induction at the Gate · Stage 1 — Applied Cryptography: Ciphers &amp; Secrets
 **Profile:** [calm-ay.github.io](https://calm-ay.github.io) · [LinkedIn](https://www.linkedin.com/in/rasaq-ayomide-sec) · [GitHub](https://github.com/Calm-Ay)
 
 ---
@@ -88,10 +88,35 @@ Phone-based identity proofing is trivially defeated by social engineering. NIST 
 
 ---
 
-## Executive Summary
+## Executive Summary — Stage 0
 
 Between 3 and 8 June 2024, an external threat actor known as The Griot used a Sankofa employee's credentials to access the company's gateway server, stage customer and transaction data, and exfiltrate it to an external server. The employee was on annual leave throughout. Nine automated security alerts were generated. All were closed by a single analyst without peer review. The breach went undetected for five days. This report identifies the intrusion chain, documents the dismissal pattern that allowed it to persist, and recommends a mandatory dual-signature policy for all medium and above security ticket closures.
 
 ---
 
-*Stage 0 — UBI Ethical Hacking Track · Submitted by Rasaq Ayomide (Calm Ay)*
+# Stage 1 — Applied Cryptography: Ciphers &amp; Secrets
+
+## Overview
+
+The Stage 0 findings triggered an emergency cryptography audit. Tunde Afolabi (Threat Intel Lead) recovered a zip from a staging server The Griot abandoned shortly after their access was blocked at the edge — an AES-CBC ciphertext with the key left in the same config, an HS256 JWT signed with a weak hard-coded secret, a classical-cipher note, three flawed session tokens, and a three-layer encoded reconnaissance memo. This report is the cryptographic post-mortem and controls package delivered to Amaka Eze, external consultant Dr. Folake Bello, and the Sankofa Digital board.
+
+**Key finding:** Every artefact in the drop was "sloppy on purpose" — reused IVs, a five-character HMAC secret, tokens with no expiry — engineered to look amateur and stay below the threshold the SOC was watching for. The decrypted reconnaissance memo named three systems slated for a second-phase attack, including a legacy admin application that should have been decommissioned in 2024.
+
+## Stage 1 Capstone Deliverables
+
+| # | Document | Description |
+|---|----------|-------------|
+| 01 | [Decryption Walkthrough](./S1_Decryption_Walkthrough.docx) | AES-CBC ciphertext, key/IV, CyberChef recipe, recovered plaintext, and ECB-vs-CBC note |
+| 02 | [Classical Cipher Analysis](./S1_Classical_Cipher.docx) | Cipher identification reasoning, decoded plaintext, and timing analysis of the actor's note |
+| 03 | [JWT Audit](./S1_JWT_Audit.docx) | Per-token breakdown of three session tokens — one red flag each, mapped to RFC 7519 / NIST SP 800-53 |
+| 04 | [Hash vs. Encryption Memo](./S1_Hash_vs_Encryption.docx) | 300-word brief for a non-technical manager, illustrated with the attacker's own mistakes |
+| 05 | [Cryptographic Controls Proposal](./S1_Cryptographic_Controls.docx) | Five concrete controls for a small team on a tight budget, each mapped to ≥2 observed failures |
+| 06 | [Three-Layer Encoding Analysis](./S1_Three_Layer_Encoding.docx) | Full Base64 → ROT13 → Atbash peel with every intermediate output and a MITRE ATT&amp;CK mapping |
+
+## Executive Summary — Stage 1
+
+The cryptographic audit of The Griot's abandoned staging server recovered the attacker's target list and operating method through systematic decryption rather than guesswork. The AES-CBC ciphertext named the primary target; the classical-cipher note confirmed the actor knew Tunde's investigation was closing in; the three audited JWTs each failed differently — one with no signature verification at all, two with no expiry, one of those bound to an account offboarded over a month earlier. The three-layer reconnaissance memo, once peeled, named three systems for a second-phase attack. None of the cryptography here was sophisticated — the danger was that Sankofa's own key handling, secret management, and token lifecycle policy gave sloppy tradecraft a three-month runway. This report names that rot and proposes five controls — mandatory JWT expiry, a secrets manager, strong HMAC secrets, an offboarding revocation list, and scheduled key rotation — sized for a small team on a tight budget.
+
+---
+
+*UBI Ethical Hacking Track · Submitted by Rasaq Ayomide (Calm Ay)*
