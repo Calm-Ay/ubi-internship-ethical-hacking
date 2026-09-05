@@ -2,12 +2,42 @@
 
 **Author:** Rasaq Ayomide (Calm Ay)
 **Programme:** UBI Internship — Ethical Hacking Track
-**Stages covered:** Stage 0 — Foundations: Induction at the Gate · Stage 1 — Applied Cryptography: Ciphers &amp; Secrets
+**Status:** ✅ Completed — all 10 stages (0–9)
 **Profile:** [calm-ay.github.io](https://calm-ay.github.io) · [LinkedIn](https://www.linkedin.com/in/rasaq-ayomide-sec) · [GitHub](https://github.com/Calm-Ay)
 
 ---
 
-## Overview
+## Track Progress — Stages 0–9 (all passed)
+
+A completed 10-stage ethical hacking programme across two tracks. Every stage graded against a **70/100 pass mark** — every stage passed.
+
+### Foundational Track · Stages 0–4 · the core programme
+
+| Stage | Title | Score | Result |
+|-------|-------|-------|--------|
+| 0 | Foundations | 90 | ✅ Passed |
+| 1 | Applied Cryptography | 92 | ✅ Passed |
+| 2 | Web Application Security | 92 | ✅ Passed |
+| 3 | Incident Response | 86 | ✅ Passed |
+| 4 | Governance & Risk | 91 | ✅ Passed |
+
+### Advanced Track · Stages 5–9 · specialist, one week each
+
+| Stage | Title | Score | Result |
+|-------|-------|-------|--------|
+| Advanced 1 | Signal | 92 | ✅ Passed |
+| Advanced 2 | Exposure | 96 | ✅ Passed |
+| Advanced 3 | Architecture | 96 | ✅ Passed |
+| Advanced 4 | Adversity | 92 | ✅ Passed |
+| Advanced 5 | The Final Case | — | ✅ Passed |
+
+> The detailed, evidence-cited writeups and deliverables for Stages 0 and 1 are preserved below as a reference archive.
+
+---
+
+## Stage 0 — Foundations · Reference Archive
+
+### Overview
 
 Stage 0 is the foundational capstone of the UBI Ethical Hacking Track. The scenario: a 600-person fintech (Sankofa Digital) has a potential insider-assisted breach. A Tier-1 analyst closed a suspicious SSH login as "probably nothing." The Head of Security, Amaka Eze, disagrees. This report is the deliverable handed to the Sankofa Digital Incident Committee.
 

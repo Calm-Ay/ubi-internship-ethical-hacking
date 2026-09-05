@@ -4,20 +4,20 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>UBI Ethical Hacking Track | Calm Ay</title>
-  <meta name="description" content="UBI Internship Ethical Hacking Track — multi-stage programme by Rasaq Ayomide (Calm Ay). SOC analysis, incident response, penetration testing, and security ethics."/>
+  <meta name="description" content="UBI Internship Ethical Hacking Track — completed 10-stage programme by Rasaq Ayomide (Calm Ay). Foundational track (0–4) and Advanced specialist track (5–9), all stages passed."/>
   <meta property="og:title" content="UBI Ethical Hacking Track | Calm Ay"/>
-  <meta property="og:description" content="Multi-stage ethical hacking internship — real scenarios, real deliverables, real citations."/>
+  <meta property="og:description" content="A completed 10-stage ethical hacking internship — Foundational and Advanced tracks, all stages passed."/>
   <meta property="og:url" content="https://calm-ay.github.io/ubi-internship-ethical-hacking/"/>
   <meta property="og:image" content="https://calm-ay.github.io/photo.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="UBI Ethical Hacking Track | Calm Ay"/>
-  <meta name="twitter:description" content="Multi-stage ethical hacking internship — real scenarios, real deliverables, real citations."/>
+  <meta name="twitter:description" content="A completed 10-stage ethical hacking internship — Foundational and Advanced tracks, all stages passed."/>
   <meta name="twitter:image" content="https://calm-ay.github.io/photo.jpg"/>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23e62020' d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z'/></svg>"/>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-    :root{--red:#e62020;--white:#ffffff;--black:#000000;--card:#0d0d0d;--gray:#777;--border:#1c1c1c;}
+    :root{--red:#e62020;--white:#ffffff;--black:#000000;--card:#0d0d0d;--gray:#777;--border:#1c1c1c;--green:#44cc44;}
     html{scroll-behavior:smooth;}
     body{background:var(--black);color:var(--white);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;}
     ::-webkit-scrollbar{width:3px;}
@@ -44,54 +44,32 @@
     .btn-r{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:13px 30px;border-radius:3px;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-decoration:none;transition:opacity 0.2s;margin-top:28px;}
     .btn-r:hover{opacity:0.82;}
 
-    /* STAGE INDEX CARDS */
+    /* TRACK HEADER */
     .section{padding:80px 0;}
-    .stage-card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:28px 30px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:16px;transition:border-color 0.2s;}
+    .track-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:60px 0 28px;}
+    .track-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;letter-spacing:2px;text-transform:uppercase;}
+    .track-meta{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);font-weight:600;}
+
+    /* STAGE CARDS */
+    .stage-card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:26px 30px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:14px;transition:border-color 0.2s;}
     .stage-card:hover{border-color:#333;}
     .stage-card::before,.stage-card::after{content:'';position:absolute;width:14px;height:14px;}
     .stage-card::before{top:-1px;left:-1px;border-top:2px solid var(--red);border-left:2px solid var(--red);}
     .stage-card::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--red);border-right:2px solid var(--red);}
-    .stage-card.locked{opacity:0.4;pointer-events:none;}
-    .stage-card.locked::before{border-color:#333;}
-    .stage-card.locked::after{border-color:#333;}
-    .stage-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.5rem;color:#1a1a1a;line-height:1;flex-shrink:0;width:60px;}
+    .stage-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.4rem;color:#1a1a1a;line-height:1;flex-shrink:0;width:56px;}
     .stage-body{flex:1;}
-    .stage-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+    .stage-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;align-items:center;}
     .tag{font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;border:1px solid #2a2a2a;color:var(--gray);padding:2px 8px;border-radius:2px;font-weight:600;}
-    .tag.done{border-color:#1a3a1a;color:#44cc44;}
-    .tag.soon{border-color:#2a1a00;color:#888;}
+    .tag.done{border-color:#1a3a1a;color:var(--green);}
     .stage-title{font-weight:700;font-size:1.05rem;margin-bottom:6px;}
     .stage-desc{font-size:0.8rem;color:var(--gray);line-height:1.65;max-width:600px;}
-    .stage-actions{display:flex;flex-direction:column;gap:10px;flex-shrink:0;align-items:flex-end;}
-    .btn-view{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;padding:10px 20px;border-radius:3px;font-weight:700;font-size:0.72rem;letter-spacing:2px;text-decoration:none;transition:opacity 0.2s;white-space:nowrap;}
-    .btn-view:hover{opacity:0.82;}
-    .btn-locked{display:inline-flex;align-items:center;gap:6px;background:#111;color:#333;padding:10px 20px;border-radius:3px;font-weight:700;font-size:0.72rem;letter-spacing:2px;white-space:nowrap;border:1px solid #222;cursor:not-allowed;}
-    .stage-date{font-size:0.65rem;letter-spacing:1px;color:#444;text-align:right;}
-
-    /* STAGE DETAIL SECTION */
-    .stage-detail{border-top:1px solid var(--border);padding:80px 0;}
-    .stage-detail-header{display:flex;align-items:center;gap:20px;margin-bottom:50px;}
-    .stage-badge{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1rem;letter-spacing:3px;color:var(--red);border:1px solid var(--red);padding:6px 16px;border-radius:3px;}
-
-    /* DELIVERABLE CARDS */
-    .doc-card{background:#080808;border:1px solid var(--border);border-radius:3px;padding:24px 28px;position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:12px;transition:border-color 0.2s;}
-    .doc-card:hover{border-color:#2a2a2a;}
-    .doc-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:#222;line-height:1;flex-shrink:0;width:40px;}
-    .doc-body{flex:1;}
-    .doc-title{font-weight:700;font-size:0.95rem;margin-bottom:5px;}
-    .doc-desc{font-size:0.78rem;color:var(--gray);line-height:1.6;max-width:560px;}
-    .doc-dl{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;padding:8px 16px;border-radius:3px;font-weight:700;font-size:0.68rem;letter-spacing:2px;text-decoration:none;transition:opacity 0.2s;white-space:nowrap;flex-shrink:0;}
-    .doc-dl:hover{opacity:0.82;}
-
-    /* FINDING GRID */
-    .finding-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px;margin-bottom:50px;}
-    .finding-card{background:#080808;border:1px solid var(--border);border-radius:3px;padding:20px;}
-    .finding-label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px;}
-    .finding-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.3rem;margin-bottom:5px;}
-    .finding-desc{font-size:0.75rem;color:var(--gray);line-height:1.6;}
+    .stage-actions{display:flex;flex-direction:column;gap:8px;flex-shrink:0;align-items:flex-end;text-align:right;}
+    .score-badge{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;line-height:1;color:var(--green);}
+    .score-lbl{font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;color:#555;}
+    .pass-pill{font-size:0.58rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);border:1px solid #1a3a1a;background:#0a1a0a;padding:2px 10px;border-radius:2px;font-weight:700;}
 
     /* STATS */
-    .stats{display:flex;gap:60px;border-top:1px solid var(--border);padding-top:40px;margin-top:40px;flex-wrap:wrap;}
+    .stats{display:flex;gap:60px;border-top:1px solid var(--border);padding-top:40px;margin-top:60px;flex-wrap:wrap;}
     .stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.5rem;color:var(--red);line-height:1;}
     .stat-lbl{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:4px;}
 
@@ -105,9 +83,7 @@
       .wrap{padding:0 24px;}
       .hero{padding-top:100px;}
       .stage-card{flex-direction:column;}
-      .stage-actions{align-items:flex-start;}
-      .doc-card{flex-direction:column;}
-      .finding-grid{grid-template-columns:1fr;}
+      .stage-actions{align-items:flex-start;text-align:left;flex-direction:row;gap:16px;}
       .stats{gap:30px;}
     }
   </style>
@@ -129,283 +105,136 @@
         <span class="r">Programme</span>
       </div>
       <div class="hero-divider"></div>
-      <p class="hero-sub">A multi-stage ethical hacking internship — real scenarios, real deliverables, real citations. Each stage builds on the last: from SOC foundations and incident analysis through to advanced offensive techniques. Every report written for a non-technical decision-maker. Every claim tied to evidence.</p>
+      <p class="hero-sub">A completed 10-stage ethical hacking internship, passed end to end. A Foundational track of five core stages — from SOC foundations and applied cryptography through web security, incident response, and governance — followed by an Advanced specialist track of five one-week stages. Every stage graded against a 70/100 pass mark. Every stage passed.</p>
       <a href="#stages" class="btn-r">VIEW STAGES ↓</a>
     </div>
   </section>
 </div>
 
-<!-- STAGE INDEX -->
+<!-- STAGES -->
 <div class="wrap">
   <section id="stages" class="section">
     <div class="label">STAGES</div>
     <div class="heading"><span class="w">Track</span><span class="r">Progress</span></div>
 
-    <div style="margin-top:50px;">
+    <!-- FOUNDATIONAL TRACK -->
+    <div class="track-head">
+      <div class="track-title">Foundational Track</div>
+      <div class="track-meta">Stages 0–4 · The core programme</div>
+    </div>
 
-      <!-- STAGE 0 — COMPLETE -->
-      <div class="stage-card">
-        <div class="stage-num">00</div>
-        <div class="stage-body">
-          <div class="stage-tags">
-            <span class="tag done">✓ COMPLETE</span>
-            <span class="tag">FOUNDATIONS</span>
-            <span class="tag">SOC ANALYSIS</span>
-            <span class="tag">INCIDENT RESPONSE</span>
-            <span class="tag">ETHICS</span>
-          </div>
-          <div class="stage-title">Stage 0 — Foundations: Induction at the Gate</div>
-          <div class="stage-desc">Sankofa Digital SOC breach scenario. Identified threat actor "The Griot" via decoded payloads, mapped a 9-alert dismissal pattern, cross-referenced a staff roster to confirm insider-assisted access, and delivered a 4-document report to a simulated Incident Committee. 10 desk tasks covering shell, hashing, encoding, log triage, and ethics.</div>
-        </div>
-        <div class="stage-actions">
-          <a href="#stage-0" class="btn-view">VIEW STAGE ↓</a>
-          <div class="stage-date">Submitted Jun 1, 2026</div>
-        </div>
+    <div class="stage-card">
+      <div class="stage-num">00</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">SOC ANALYSIS</span><span class="tag">INCIDENT RESPONSE</span><span class="tag">ETHICS</span></div>
+        <div class="stage-title">Stage 0 — Foundations</div>
+        <div class="stage-desc">SOC breach scenario — identified the threat actor via decoded payloads, mapped a 9-alert dismissal pattern, and delivered a report to a simulated Incident Committee.</div>
       </div>
+      <div class="stage-actions"><div class="score-badge">90</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
 
-      <!-- STAGE 1 — COMPLETE -->
-      <div class="stage-card">
-        <div class="stage-num">01</div>
-        <div class="stage-body">
-          <div class="stage-tags">
-            <span class="tag done">✓ COMPLETE</span>
-            <span class="tag">APPLIED CRYPTOGRAPHY</span>
-            <span class="tag">JWT AUDITING</span>
-            <span class="tag">CIPHER ANALYSIS</span>
-            <span class="tag">CONTROLS DESIGN</span>
-          </div>
-          <div class="stage-title">Stage 1 — Applied Cryptography: Ciphers &amp; Secrets</div>
-          <div class="stage-desc">Cryptographic audit of a staging-server drop left behind by "The Griot". Decrypted an AES-CBC ciphertext, identified and broke a classical cipher, audited three session JWTs for signature/lifecycle/privilege flaws, peeled a three-layer encoded reconnaissance memo, and delivered a 6-document post-mortem and controls package to a simulated security board.</div>
-        </div>
-        <div class="stage-actions">
-          <a href="#stage-1" class="btn-view">VIEW STAGE ↓</a>
-          <div class="stage-date">Submitted Jun 8, 2026</div>
-        </div>
+    <div class="stage-card">
+      <div class="stage-num">01</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">APPLIED CRYPTOGRAPHY</span><span class="tag">JWT AUDITING</span><span class="tag">CIPHER ANALYSIS</span></div>
+        <div class="stage-title">Stage 1 — Applied Cryptography</div>
+        <div class="stage-desc">Cryptographic audit — decrypted AES-CBC ciphertext, broke a classical cipher, audited three flawed session JWTs, and peeled a three-layer encoded recon memo.</div>
       </div>
+      <div class="stage-actions"><div class="score-badge">92</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
 
-      <!-- STAGE 2 — LOCKED -->
-      <div class="stage-card locked">
-        <div class="stage-num">02</div>
-        <div class="stage-body">
-          <div class="stage-tags">
-            <span class="tag soon">COMING SOON</span>
-          </div>
-          <div class="stage-title">Stage 2 — Not Yet Started</div>
-          <div class="stage-desc">Details will be published when this stage is submitted and cleared for release.</div>
-        </div>
-        <div class="stage-actions">
-          <div class="btn-locked">LOCKED</div>
-        </div>
+    <div class="stage-card">
+      <div class="stage-num">02</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">WEB APP SECURITY</span><span class="tag">OWASP TOP 10</span><span class="tag">EXPLOITATION</span></div>
+        <div class="stage-title">Stage 2 — Web Application Security</div>
+        <div class="stage-desc">Assessed and exploited web application vulnerabilities — injection, broken access control, and related OWASP Top 10 classes — with each finding documented and mapped to remediation.</div>
       </div>
+      <div class="stage-actions"><div class="score-badge">92</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
 
-      <!-- STAGE 3 — LOCKED -->
-      <div class="stage-card locked">
-        <div class="stage-num">03</div>
-        <div class="stage-body">
-          <div class="stage-tags">
-            <span class="tag soon">COMING SOON</span>
-          </div>
-          <div class="stage-title">Stage 3 — Not Yet Started</div>
-          <div class="stage-desc">Details will be published when this stage is submitted and cleared for release.</div>
-        </div>
-        <div class="stage-actions">
-          <div class="btn-locked">LOCKED</div>
-        </div>
+    <div class="stage-card">
+      <div class="stage-num">03</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">INCIDENT RESPONSE</span><span class="tag">DFIR</span><span class="tag">TRIAGE</span></div>
+        <div class="stage-title">Stage 3 — Incident Response</div>
+        <div class="stage-desc">Worked an incident end to end — detection, triage, containment, and reporting — reconstructing the timeline of a security event and recommending corrective actions.</div>
       </div>
+      <div class="stage-actions"><div class="score-badge">86</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
 
-      <!-- STAGE 4 — LOCKED -->
-      <div class="stage-card locked">
-        <div class="stage-num">04</div>
-        <div class="stage-body">
-          <div class="stage-tags">
-            <span class="tag soon">COMING SOON</span>
-          </div>
-          <div class="stage-title">Stage 4 — Not Yet Started</div>
-          <div class="stage-desc">Details will be published when this stage is submitted and cleared for release.</div>
-        </div>
-        <div class="stage-actions">
-          <div class="btn-locked">LOCKED</div>
-        </div>
+    <div class="stage-card">
+      <div class="stage-num">04</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">GOVERNANCE</span><span class="tag">RISK</span><span class="tag">COMPLIANCE</span></div>
+        <div class="stage-title">Stage 4 — Governance &amp; Risk</div>
+        <div class="stage-desc">Applied governance, risk, and compliance thinking — assessing risk, mapping controls to recognised frameworks, and translating technical exposure into decisions for leadership.</div>
       </div>
+      <div class="stage-actions"><div class="score-badge">91</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
 
+    <!-- ADVANCED TRACK -->
+    <div class="track-head">
+      <div class="track-title">Advanced Track</div>
+      <div class="track-meta">Stages 5–9 · Specialist · one week each</div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-num">05</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">ADVANCED 1</span><span class="tag">SPECIALIST</span></div>
+        <div class="stage-title">Advanced 1 — Signal</div>
+        <div class="stage-desc">One-week specialist module in the Advanced track, graded against the same 70/100 pass mark.</div>
+      </div>
+      <div class="stage-actions"><div class="score-badge">92</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-num">06</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">ADVANCED 2</span><span class="tag">SPECIALIST</span></div>
+        <div class="stage-title">Advanced 2 — Exposure</div>
+        <div class="stage-desc">One-week specialist module in the Advanced track, graded against the same 70/100 pass mark.</div>
+      </div>
+      <div class="stage-actions"><div class="score-badge">96</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-num">07</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">ADVANCED 3</span><span class="tag">SPECIALIST</span></div>
+        <div class="stage-title">Advanced 3 — Architecture</div>
+        <div class="stage-desc">One-week specialist module in the Advanced track, graded against the same 70/100 pass mark.</div>
+      </div>
+      <div class="stage-actions"><div class="score-badge">96</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-num">08</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">ADVANCED 4</span><span class="tag">SPECIALIST</span></div>
+        <div class="stage-title">Advanced 4 — Adversity</div>
+        <div class="stage-desc">One-week specialist module in the Advanced track, graded against the same 70/100 pass mark.</div>
+      </div>
+      <div class="stage-actions"><div class="score-badge">92</div><div class="score-lbl">Score · 70 to pass</div><span class="pass-pill">Passed</span></div>
+    </div>
+
+    <div class="stage-card">
+      <div class="stage-num">09</div>
+      <div class="stage-body">
+        <div class="stage-tags"><span class="tag done">✓ PASSED</span><span class="tag">ADVANCED 5</span><span class="tag">CAPSTONE</span><span class="tag">FINAL CASE</span></div>
+        <div class="stage-title">Advanced 5 — The Final Case</div>
+        <div class="stage-desc">The capstone of the Advanced track — the culminating specialist case, bringing the full programme together.</div>
+      </div>
+      <div class="stage-actions"><span class="pass-pill">Passed</span></div>
     </div>
 
     <div class="stats">
-      <div><div class="stat-num">2</div><div class="stat-lbl">Stages Completed</div></div>
-      <div><div class="stat-num">10</div><div class="stat-lbl">Documents Delivered</div></div>
-      <div><div class="stat-num">9</div><div class="stat-lbl">Alerts Mapped</div></div>
-      <div><div class="stat-num">16</div><div class="stat-lbl">Desk Tasks Done</div></div>
+      <div><div class="stat-num">10</div><div class="stat-lbl">Stages Passed</div></div>
+      <div><div class="stat-num">2</div><div class="stat-lbl">Tracks Completed</div></div>
+      <div><div class="stat-num">96</div><div class="stat-lbl">Top Score</div></div>
+      <div><div class="stat-num">70</div><div class="stat-lbl">Pass Mark</div></div>
     </div>
-  </section>
-</div>
-
-<!-- STAGE 0 DETAIL -->
-<div class="wrap">
-  <section id="stage-0" class="stage-detail">
-    <div class="stage-detail-header">
-      <div class="stage-badge">STAGE 0</div>
-      <div>
-        <div style="font-weight:700;font-size:1.1rem;">Foundations — Induction at the Gate</div>
-        <div style="font-size:0.78rem;color:var(--gray);margin-top:3px;">Sankofa Digital · SOC Incident Analysis · Submitted Jun 1, 2026</div>
-      </div>
-    </div>
-
-    <div class="label">KEY FINDINGS</div>
-    <div class="finding-grid">
-      <div class="finding-card">
-        <div class="finding-label">Threat Actor</div>
-        <div class="finding-val">The Griot</div>
-        <div class="finding-desc">Named from decoded Base64 payload: <em>"The Griot is already inside the walls."</em></div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">Entry Point</div>
-        <div class="finding-val">185.220.101.9</div>
-        <div class="finding-desc">External IP used to authenticate as o.adegoke while he was on annual leave Jun 3–7.</div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">Dismissal Pattern</div>
-        <div class="finding-val">9 Alerts Closed</div>
-        <div class="finding-desc">11 of 16 Q2 tickets closed by a single analyst — the same account that was flagged — with no peer review.</div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">Post-Offboarding Account</div>
-        <div class="finding-val">a.eze Still Active</div>
-        <div class="finding-desc">Account offboarded Apr 12 still appearing in auth logs Jun 3–5. Never purged.</div>
-      </div>
-    </div>
-
-    <div class="label">DELIVERABLES</div>
-
-    <div class="doc-card">
-      <div class="doc-num">D1</div>
-      <div class="doc-body">
-        <div class="doc-title">Suspicious Login Evidence Table</div>
-        <div class="doc-desc">10-row evidence table mapping every suspicious event to file, timestamp, source IP, and confidence rating. Each row cites ≥2 evidence sources. Covers initial login, repeat session, post-offboarding activity, and decoded threat actor name.</div>
-      </div>
-      <a href="./D1_Suspicious_Login_Evidence_Table.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-    <div class="doc-card">
-      <div class="doc-num">D2</div>
-      <div class="doc-body">
-        <div class="doc-title">Tier-1 Dismissal Pattern Analysis</div>
-        <div class="doc-desc">Full analysis of how 9 alerts were closed across SD-40812 through SD-40866. Per-ticket breakdown of what was raised, what was missed, and the conflict of interest. Dual-signature policy recommended.</div>
-      </div>
-      <a href="./D2_Tier1_Dismissal_Pattern.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-    <div class="doc-card">
-      <div class="doc-num">D3</div>
-      <div class="doc-body">
-        <div class="doc-title">Business Impact &amp; Next Steps</div>
-        <div class="doc-desc">Board-level headline finding, attacker profile with MITRE ATT&amp;CK mapping, NDPA obligations, and three 72-hour action boxes with owners and deadlines. Full evidence appendix included.</div>
-      </div>
-      <a href="./D3_Business_Impact_Next_Steps.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-    <div class="doc-card">
-      <div class="doc-num">D4</div>
-      <div class="doc-body">
-        <div class="doc-title">Judgment Essay</div>
-        <div class="doc-desc">Ethics call under ISC2 Code of Ethics Canon I (Protect Society) and Canon II (Act Honorably), with exact escalation order. Open-ended SIEM alert scenario referencing D1 rows directly, including a handover note draft.</div>
-      </div>
-      <a href="./D4_Judgment_Essay.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-  </section>
-</div>
-
-<!-- STAGE 1 DETAIL -->
-<div class="wrap">
-  <section id="stage-1" class="stage-detail">
-    <div class="stage-detail-header">
-      <div class="stage-badge">STAGE 1</div>
-      <div>
-        <div style="font-weight:700;font-size:1.1rem;">Applied Cryptography — Ciphers &amp; Secrets</div>
-        <div style="font-size:0.78rem;color:var(--gray);margin-top:3px;">Sankofa Digital · Cryptographic Audit &amp; Controls Review · Submitted Jun 8, 2026</div>
-      </div>
-    </div>
-
-    <div class="label">KEY FINDINGS</div>
-    <div class="finding-grid">
-      <div class="finding-card">
-        <div class="finding-label">AES-CBC Ciphertext</div>
-        <div class="finding-val">Decrypted Target Name</div>
-        <div class="finding-desc">Key and IV left in the same staging config as the ciphertext — recovered the plaintext naming the attacker's intended target.</div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">Classical Cipher</div>
-        <div class="finding-val">ROT13 — "The Griot Is Already Inside"</div>
-        <div class="finding-desc">Identified by alphabet-only structure and word-pattern frequency; decoded note shows the actor was aware of Tunde's investigation.</div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">JWT Audit</div>
-        <div class="finding-val">3 for 3 — All Tokens Flawed</div>
-        <div class="finding-desc">alg:none signature bypass, missing-exp indefinite sessions, and a privileged admin claim issued for an offboarded account.</div>
-      </div>
-      <div class="finding-card">
-        <div class="finding-label">Three-Layer Recon Memo</div>
-        <div class="finding-val">Next Targets Named</div>
-        <div class="finding-desc">Base64 → ROT13 → Atbash peel revealed a staged reconnaissance plan against three internal systems, including a legacy app that should have been decommissioned in 2024.</div>
-      </div>
-    </div>
-
-    <div class="label">DELIVERABLES</div>
-
-    <div class="doc-card">
-      <div class="doc-num">01</div>
-      <div class="doc-body">
-        <div class="doc-title">Decryption Walkthrough</div>
-        <div class="doc-desc">AES-CBC ciphertext, key/IV, CyberChef recipe, recovered plaintext, and a two-sentence note on why ECB mode would have leaked structure that CBC did not.</div>
-      </div>
-      <a href="./S1_Decryption_Walkthrough.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-    <div class="doc-card">
-      <div class="doc-num">02</div>
-      <div class="doc-body">
-        <div class="doc-title">Classical Cipher Analysis</div>
-        <div class="doc-desc">Cipher identification reasoning (frequency analysis + structural cues), the decoded plaintext, and what its timing reveals about the actor's awareness of the investigation.</div>
-      </div>
-      <a href="./S1_Classical_Cipher.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-    <div class="doc-card">
-      <div class="doc-num">03</div>
-      <div class="doc-body">
-        <div class="doc-title">JWT Audit</div>
-        <div class="doc-desc">Per-token breakdown of header, payload, and signature for three session tokens — one red flag per token, mapped to RFC 7519 and NIST SP 800-53.</div>
-      </div>
-      <a href="./S1_JWT_Audit.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-    <div class="doc-card">
-      <div class="doc-num">04</div>
-      <div class="doc-body">
-        <div class="doc-title">Hash vs. Encryption Memo</div>
-        <div class="doc-desc">300-word brief for a non-technical manager on when to hash and when to encrypt, illustrated with the attacker's own cryptographic mistakes.</div>
-      </div>
-      <a href="./S1_Hash_vs_Encryption.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-    <div class="doc-card">
-      <div class="doc-num">05</div>
-      <div class="doc-body">
-        <div class="doc-title">Cryptographic Controls Proposal</div>
-        <div class="doc-desc">Five concrete controls for a small team on a tight budget — each mapped to at least two observed failures, with one-line justifications, rough costs, and rollout order.</div>
-      </div>
-      <a href="./S1_Cryptographic_Controls.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
-    <div class="doc-card">
-      <div class="doc-num">06</div>
-      <div class="doc-body">
-        <div class="doc-title">Three-Layer Encoding Analysis</div>
-        <div class="doc-desc">Full peel of the Base64 → ROT13 → Atbash reconnaissance memo with every intermediate output shown, plus a MITRE ATT&amp;CK mapping of the planned next-phase targets.</div>
-      </div>
-      <a href="./S1_Three_Layer_Encoding.docx" class="doc-dl">↓ DOWNLOAD</a>
-    </div>
-
   </section>
 </div>
 
