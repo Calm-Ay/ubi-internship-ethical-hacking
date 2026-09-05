@@ -13,23 +13,23 @@ A completed 10-stage ethical hacking programme across two tracks. Every stage gr
 
 ### Foundational Track · Stages 0–4 · the core programme
 
-| Stage | Title | Score | Result |
-|-------|-------|-------|--------|
-| 0 | Foundations | 90 | ✅ Passed |
-| 1 | Applied Cryptography | 92 | ✅ Passed |
-| 2 | Web Application Security | 92 | ✅ Passed |
-| 3 | Incident Response | 86 | ✅ Passed |
-| 4 | Governance & Risk | 91 | ✅ Passed |
+| Stage | Title | Score | Result | Files |
+|-------|-------|-------|--------|-------|
+| 0 | Foundations | 90 | ✅ Passed | [View](https://drive.google.com/drive/folders/1LypmE1fpe8CR3c2rhVCa7yB0GX3AKyJ-?usp=drive_link) |
+| 1 | Applied Cryptography | 92 | ✅ Passed | [View](https://drive.google.com/drive/folders/1YXCRjZEFhkF96QQXEyJ1_HTRObX8df-n?usp=drive_link) |
+| 2 | Web Application Security | 92 | ✅ Passed | [View](https://drive.google.com/drive/folders/1YXCRjZEFhkF96QQXEyJ1_HTRObX8df-n?usp=drive_link) |
+| 3 | Incident Response | 86 | ✅ Passed | [View](https://drive.google.com/open?id=1wNRenBaaIfzP-EJNEGv85tBYFu2kHB5k) |
+| 4 | Governance & Risk | 91 | ✅ Passed | [View](https://drive.google.com/open?id=1HQPZny7KzOdUVZCqSd-wGypmFIGA97TD) |
 
 ### Advanced Track · Stages 5–9 · specialist, one week each
 
-| Stage | Title | Score | Result |
-|-------|-------|-------|--------|
-| Advanced 1 | Signal | 92 | ✅ Passed |
-| Advanced 2 | Exposure | 96 | ✅ Passed |
-| Advanced 3 | Architecture | 96 | ✅ Passed |
-| Advanced 4 | Adversity | 92 | ✅ Passed |
-| Advanced 5 | The Final Case | — | ✅ Passed |
+| Stage | Title | Score | Result | Files |
+|-------|-------|-------|--------|-------|
+| Advanced 1 | Signal | 92 | ✅ Passed | [View](https://drive.google.com/open?id=1xlVQmxSulUSALGza-QCpWT_4vH6FrFoX) |
+| Advanced 2 | Exposure | 96 | ✅ Passed | [View](https://drive.google.com/open?id=1rUevoGngmvWaVbQgoq_tV2GuCfyjKnyd) |
+| Advanced 3 | Architecture | 96 | ✅ Passed | [View](https://drive.google.com/open?id=1hSu3PR_QVGC4LTQScBa5qKnKCwe69geH) |
+| Advanced 4 | Adversity | 92 | ✅ Passed | [View](https://drive.google.com/open?id=1WvQH-9TswwRBeuiN8ifBZtUj-a1S6JV1) |
+| Advanced 5 | The Final Case | — | ✅ Passed | — |
 
 > The detailed, evidence-cited writeups and deliverables for Stages 0 and 1 are preserved below as a reference archive.
 
